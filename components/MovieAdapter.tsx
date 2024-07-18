@@ -2,12 +2,7 @@ import React from 'react';
 import { Text, View, FlatList } from 'react-native';
 import MovieListItem from './MovieListItem';
 import { styles } from '../styles/appStyle';
-import Proptypes from 'prop-types'
-
-const proptypes = {
-    title: Proptypes.object,
-    content: Proptypes.object,
-};
+import PropTypes from 'prop-types';
 class MovieAdapter extends React.PureComponent {
     render() {
         const { title, content } = this.props;
@@ -16,17 +11,21 @@ class MovieAdapter extends React.PureComponent {
                 <Text style = {styles.movieTitle}>{title}</Text>
                 <View>
                     <FlatList 
+                        showsHorizontalScrollIndicator = {false}
                         style ={styles.listView}
                         horizontal={true}
                         data={content}
                         renderItem={({ item }) => <MovieListItem movieList={item}
-                        initialNumToRender={7}/>} />
+                        initialNumToRender={5}/>} />
                 </View>
             </View>
         );
     }
 }
 
-MovieAdapter.proptype = proptypes;
-
+MovieAdapter.propTypes = {
+    title: PropTypes.string.isRequired,
+    content: PropTypes.array,
+ 
+};
 export default MovieAdapter;

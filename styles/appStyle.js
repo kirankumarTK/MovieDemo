@@ -9,35 +9,35 @@ export const styles = StyleSheet.create({
         backgroundColor: '#404040'
     },
     movieNameText :{
-        fontSize: 15,
+        fontSize: 10,
         fontStyle: 'italic',
         fontWeight : 'bold',
         color: 'white',
-        paddingBottom: 5,
-        paddingTop: 5,
-        width: 150,
+        paddingTop: 2,
+        width: 130,
         textAlign : 'center',
     },
     movieTitle :{
         alignContent: 'center',
-        fontSize: 20,
+        fontSize: 18,
+        padding: 5,
         fontWeight: 'bold',
         color: 'white',
     },
     tochView: {
-      padding: 5,
+      paddingLeft: 10,
       position : 'relative',  
     },
     imageView : {
-    padding: 2,
-    width: 150,
-    height: 250,
-    borderRadius: 10,
+    padding: 5,
+    width: 130,
+    height: 210,
+    borderRadius: 15,
 
     },
     listView: {
-        paddingTop: 20,
-        paddingBottom : 20,
+        paddingTop: 5,
+        paddingBottom : 5,
         
     },
     center_align: {

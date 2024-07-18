@@ -16,8 +16,8 @@ export const getPopularMovies = async() => {
 }
 
 
-export const getUpcomingMovies = async() => {
-  const response = await axios.get(BASE_URL+'movie/upcoming?language=en-US&page=1',
+export const getTrendingMovies = async() => {
+  const response = await axios.get(BASE_URL+'trending/movie/day?language=en-US',
     {headers : { Authorization : TOKEN}});
 
   return response.data.results

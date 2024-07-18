@@ -4,9 +4,7 @@ import { styles } from '../styles/appStyle';
 import { IMAGE_w500 } from '../api_services/callAPI';
 import PropTypes from 'prop-types';
 
-const proptypes = {
-    movieList:PropTypes.object,
-};
+
 const placeHolderImage = require('../assert/placeholder.jpg')
 
 class MovieListItem extends React.PureComponent {
@@ -29,6 +27,8 @@ class MovieListItem extends React.PureComponent {
         );
     }
 }
-MovieListItem.proptypes = proptypes;
+MovieListItem.propTypes = {
+ movieList : PropTypes.object,
+};
 
 export default MovieListItem;
