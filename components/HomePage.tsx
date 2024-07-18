@@ -4,7 +4,8 @@ import { styles } from '../styles/appStyle';
 import { getPopularMovies, getTopRatedMovies, getTrendingMovies } from '../api_services/callAPI';
 import MovieAdapter from './MovieAdapter';
 
-const HomePage = () => {
+
+const HomePage  = ({navigation}) => {
 
   const [popularMovies, setMovieList] = useState();
   const [topRatedMovies, setTopMovieList] = useState();
@@ -39,11 +40,11 @@ const HomePage = () => {
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}  >
             
-            {trendingMovies &&  <MovieAdapter  title= "TrendingMovies" content={trendingMovies} /> }
+            {trendingMovies &&  <MovieAdapter navigation = {navigation} title= "TrendingMovies" content={trendingMovies} /> }
             
-            {topRatedMovies && <MovieAdapter title="TopRatedMovies" content={topRatedMovies} />}
+            {topRatedMovies && <MovieAdapter navigation= {navigation} title="TopRatedMovies" content={topRatedMovies} />}
             
-             {popularMovies &&  <MovieAdapter  title= "PopularMovies" content={popularMovies} /> }
+             {popularMovies &&  <MovieAdapter navigation= {navigation}  title= "PopularMovies" content={popularMovies} /> }
 
           </ScrollView>) 
         }

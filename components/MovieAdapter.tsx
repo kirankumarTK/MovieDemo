@@ -5,7 +5,7 @@ import { styles } from '../styles/appStyle';
 import PropTypes from 'prop-types';
 class MovieAdapter extends React.PureComponent {
     render() {
-        const { title, content } = this.props;
+        const { navigation,title, content } = this.props;
         return (
             <View>
                 <Text style = {styles.movieTitle}>{title}</Text>
@@ -15,7 +15,7 @@ class MovieAdapter extends React.PureComponent {
                         style ={styles.listView}
                         horizontal={true}
                         data={content}
-                        renderItem={({ item }) => <MovieListItem movieList={item}
+                        renderItem={({ item }) => <MovieListItem navigation = {navigation} movieList={item}
                         initialNumToRender={5}/>} />
                 </View>
             </View>
@@ -24,6 +24,7 @@ class MovieAdapter extends React.PureComponent {
 }
 
 MovieAdapter.propTypes = {
+    navigation : PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     content: PropTypes.array,
  

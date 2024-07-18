@@ -3,15 +3,17 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from '../styles/appStyle';
 import { IMAGE_w500 } from '../api_services/callAPI';
 import PropTypes from 'prop-types';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const placeHolderImage = require('../assert/placeholder.jpg')
 
 class MovieListItem extends React.PureComponent {
     render() {
-        const { movieList } = this.props;
+        const { navigation,movieList } = this.props;
         return (
-            <TouchableOpacity style={styles.tochView} >
+            <TouchableOpacity style={styles.tochView}
+            onPress={()=> navigation.navigate('Movie Detail',{movieList : movieList})}>
                 <View style = {styles.center_align}>
                     <Image
                         style={styles.imageView}
@@ -28,7 +30,8 @@ class MovieListItem extends React.PureComponent {
     }
 }
 MovieListItem.propTypes = {
- movieList : PropTypes.object,
+    navigation: PropTypes.object,
+    movieList: PropTypes.object,
 };
 
 export default MovieListItem;
