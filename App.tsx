@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 
 import { getPopularMovies, getTopRatedMovies } from './api_services/callAPI';
-//import {BASE_URL} from '@env'
+
 const App = () => {
 
   // in this movieTitle -> variable 
@@ -20,7 +20,6 @@ const App = () => {
   useEffect(() => {
     // then -> is promise method it will return response once getPopularMovies() return data
     getTopRatedMovies().then(movie_respone => {
-      console.log( movie_respone[0].title);
       setMovieTitle('Movie Name : ' + movie_respone[0].title)
     }).catch(err => {
       setError(err);

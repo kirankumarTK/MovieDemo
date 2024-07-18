@@ -1,11 +1,11 @@
 // inorder to use await method should be declare as async
 
 import axios from "axios";
-//import config from "../config";
+//import config from "../config/config";
 
 const BASE_URL ='https://api.themoviedb.org/3/'
 const TOKEN = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZGQ1ZTRjMzAxZGE2YTVjODJkMDVlNzA5Y2JjNjBiOSIsIm5iZiI6MTcyMTExMjEzMi43NjE1MjQsInN1YiI6IjY2OTYxNGI2OTg5NDQ1YjVmZjgwNzdhNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cu5PzFuzEwpdNZ5LIm37LfKbCNQR3xDghRjCOZizcl8'
-
+export const IMAGE_w500 = 'https://image.tmdb.org/t/p/w500'
 // axios is libary used to call api
 export const getPopularMovies = async() => {
   const response = await axios.get(BASE_URL+'movie/popular?language=en-US&page=1',
@@ -24,7 +24,8 @@ export const getUpcomingMovies = async() => {
 
 }
 
-export const getTopRatedMovies = async() => {
+export const getTopRatedMovies = async () => {
+  //console.log(config.BASE_URL)
   const response = await axios.get(BASE_URL+'movie/top_rated?language=en-US&page=1',
     {headers : { Authorization : TOKEN}});
 
