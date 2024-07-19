@@ -34,30 +34,45 @@ const HomePage  = ({navigation}) => {
   
   return (
     <React.Fragment>
-      <SafeAreaView style={styles.movieliststyle}>
-        {!progress &&
-          (<ScrollView
+      <SafeAreaView style={[styles.movieliststyle,styles.app_color_secondary]}>
+        {!progress && (
+          <ScrollView
             showsVerticalScrollIndicator={false}
-            showsHorizontalScrollIndicator={false}  >
-            
-            {trendingMovies &&  <MovieAdapter navigation = {navigation} title= "TrendingMovies" content={trendingMovies} /> }
-            
-            {topRatedMovies && <MovieAdapter navigation= {navigation} title="TopRatedMovies" content={topRatedMovies} />}
-            
-             {popularMovies &&  <MovieAdapter navigation= {navigation}  title= "PopularMovies" content={popularMovies} /> }
+            showsHorizontalScrollIndicator={false}>
+            {trendingMovies && (
+              <MovieAdapter
+                navigation={navigation}
+                title="TrendingMovies"
+                content={trendingMovies}
+              />
+            )}
 
-          </ScrollView>) 
-        }
-        {
-          progress &&
-          (<View style={{ flex : 1, justifyContent: "center", alignItems: "center" }}>
+            {topRatedMovies && (
+              <MovieAdapter
+                navigation={navigation}
+                title="TopRatedMovies"
+                content={topRatedMovies}
+              />
+            )}
+
+            {popularMovies && (
+              <MovieAdapter
+                navigation={navigation}
+                title="PopularMovies"
+                content={popularMovies}
+              />
+            )}
+          </ScrollView>
+        )}
+        {progress && (
+          <View
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <ActivityIndicator size={'large'} />
-          </View>)
-        }
-      </SafeAreaView> 
-       
+          </View>
+        )}
+      </SafeAreaView>
     </React.Fragment>
-    );
+  );
 }
 
 export default HomePage;

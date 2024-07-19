@@ -8,14 +8,14 @@ class MovieDetail extends React.PureComponent {
   render() {
     const {movieDetails} = this.props;
     return (
-      <View style={styles.movie_detail}>
-        <Text style={styles.title_center}>{movieDetails.title}</Text>
+      <View style={[styles.movie_detail,styles.app_color_secondary]}>
+        <Text style={[styles.title_center,styles.app_text_color]}>{movieDetails.title}</Text>
 
         {movieDetails.genres && (
           <View style={styles.genders_view}>
             {movieDetails.genres.map(genres => {
               return (
-                <Text key={genres.id} style={styles.text_center}>
+                <Text key={genres.id} style={[styles.text_center,styles.app_text_color]}>
                   {genres.name}
                 </Text>
               );

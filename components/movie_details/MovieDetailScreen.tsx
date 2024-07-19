@@ -23,7 +23,7 @@ const MovieDetailScreen = ({route, navigation}) => {
   return (
     <React.Fragment>
       {!progress && (
-        <SafeAreaView style={styles.movie_detail}>
+        <SafeAreaView style={[styles.movie_detail,styles.app_color_secondary]}>
           <ScrollView>
             <MovieBanner movieImage={movieList.poster_path} />
             <MovieDetail movieDetails={movieDetails} />
