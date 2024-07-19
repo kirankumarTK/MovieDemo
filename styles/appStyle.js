@@ -1,12 +1,14 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet,Dimensions } from "react-native";
+
+const screenHeight = Dimensions.get('screen').height;
+const screenWidth = Dimensions.get('screen').width;
 
 export const styles = StyleSheet.create({
 
     movieliststyle: {
-        justifyContent: 'center',
-        alignContent: 'center',
         padding: 5,
-        backgroundColor: '#404040'
+        backgroundColor: '#404040',
+        flex : 1,
     },
     movieNameText :{
         fontSize: 10,
@@ -25,25 +27,36 @@ export const styles = StyleSheet.create({
         color: 'white',
     },
     tochView: {
-      paddingLeft: 10,
-      position : 'relative',  
+        paddingLeft: 10,
+        flex: 1,
+        position: 'relative',  
     },
-    imageView : {
-    padding: 5,
-    width: 130,
-    height: 210,
-    borderRadius: 15,
+    imageView: {
+        padding: 5,
+        width: 130,
+        height: 210,
+        borderRadius: 15,
+        flex: 1,
 
     },
     listView: {
         paddingTop: 5,
-        paddingBottom : 5,
+        paddingBottom: 5,
         
     },
     center_align: {
         justifyContent: 'center',
         alignContent: 'center',
         alignItems : 'center'
-    }
+    },
+    banner_img: {
+        padding: 5,
+        height: screenHeight / 2,
+        width: screenWidth,
+    },
+    movie_detail: {
+        backgroundColor: '#404040',
+        flex : 1,
+    },
 
 }); 

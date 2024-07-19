@@ -9,7 +9,10 @@ export const IMAGE_w500 = 'https://image.tmdb.org/t/p/w500'
 // axios is libary used to call api
 export const getPopularMovies = async() => {
   const response = await axios.get(BASE_URL+'movie/popular?language=en-US&page=1',
-    {headers : { Authorization : TOKEN}});
+    {
+      accept: 'application/json',
+      headers: { Authorization: TOKEN }
+    });
 
   return response.data.results
 
@@ -18,17 +21,33 @@ export const getPopularMovies = async() => {
 
 export const getTrendingMovies = async() => {
   const response = await axios.get(BASE_URL+'trending/movie/day?language=en-US',
-    {headers : { Authorization : TOKEN}});
+    {
+      accept: 'application/json',
+      headers: { Authorization: TOKEN }
+    });
 
   return response.data.results
 
 }
 
 export const getTopRatedMovies = async () => {
-  //console.log(config.BASE_URL)
   const response = await axios.get(BASE_URL+'movie/top_rated?language=en-US&page=1',
-    {headers : { Authorization : TOKEN}});
+    {
+      accept: 'application/json',
+      headers: { Authorization: TOKEN }
+    });
 
   return response.data.results
 
+}
+
+export const getMovieDetail = async (movieId) => {
+  
+  const response = await axios.get(BASE_URL + `movie/${movieId}?language=en-US`,
+    {
+      accept: 'application/json',
+      headers: { Authorization: TOKEN }
+    });
+  
+  return response.data
 }
