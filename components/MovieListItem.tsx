@@ -23,7 +23,7 @@ class MovieListItem extends React.PureComponent {
                         }
                         resizeMode='cover'
                     />
-                    <Text style={styles.movieNameText}>{ movieList.original_title}</Text>
+                    <Text style={[styles.movieNameText,styles.app_text_color]}>{ movieList.original_title}</Text>
                 </View>
             </TouchableOpacity>
         );

@@ -4,16 +4,23 @@ const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 
 export const styles = StyleSheet.create({
+  app_color_primary: {
+    backgroundColor: '#66FF66',
+  },
+  app_color_secondary: {
+    backgroundColor: '#FFFFF',
+  },
+  app_text_color: {
+    color: 'black',
+  },
   movieliststyle: {
     padding: 5,
-    backgroundColor: '#404040',
     flex: 1,
   },
   movieNameText: {
     fontSize: 10,
     fontStyle: 'italic',
     fontWeight: 'bold',
-    color: 'white',
     paddingTop: 2,
     width: 130,
     textAlign: 'center',
@@ -23,7 +30,6 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     padding: 5,
     fontWeight: 'bold',
-    color: 'white',
   },
   tochView: {
     paddingLeft: 10,
@@ -54,8 +60,8 @@ export const styles = StyleSheet.create({
   movie_detail: {
     alignContent: 'center',
     justifyContent: 'center',
-    backgroundColor: '#404040',
     width: screenWidth,
+    alignItems: 'center',
     flex: 1,
   },
   title_center: {
@@ -64,7 +70,6 @@ export const styles = StyleSheet.create({
     fontFamily: 'Cochin',
     padding: 10,
     fontWeight: 'bold',
-    color: 'white',
   },
   text_center: {
     textAlign: 'center',
@@ -72,12 +77,10 @@ export const styles = StyleSheet.create({
     fontFamily: 'Cochin',
     padding: 5,
     fontWeight: 'bold',
-    color: 'white',
   },
   genders_view: {
     alignContent: 'center',
     justifyContent: 'center',
-    backgroundColor: '#404040',
-    flexDirection : 'row',
+    flexDirection: 'row',
   },
 });

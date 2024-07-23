@@ -8,7 +8,7 @@ class MovieAdapter extends React.PureComponent {
     const {navigation, title, content} = this.props;
     return (
       <View>
-        <Text style={styles.movieTitle}>{title}</Text>
+        <Text style={[styles.movieTitle,styles.app_text_color]}>{title}</Text>
         <View>
           <FlatList
             showsHorizontalScrollIndicator={false}
