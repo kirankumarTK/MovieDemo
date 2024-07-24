@@ -1,2 +1,4 @@
 npm install react-native-svg
 npm install react-native-star-rating-widget --save
+npm install dateformat
+npm i --save-dev @types/dateformat

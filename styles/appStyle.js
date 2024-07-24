@@ -83,4 +83,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
   },
+  margin_style: {
+    margin : 5,
+  },
 });
