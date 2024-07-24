@@ -13,6 +13,9 @@ export const styles = StyleSheet.create({
   app_text_color: {
     color: 'black',
   },
+  app_button_color: {
+    color: '#FFFFFF',
+  },
   movieliststyle: {
     padding: 5,
     flex: 1,
@@ -84,6 +87,23 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   margin_style: {
-    margin : 5,
+    margin: 5,
+  },
+  play_button: {
+    position: 'absolute',
+    top: 470,
+    right: 5,
+  },
+  round_circle: {
+    backgroundColor: '#66FF66',
+    borderRadius: 50,
+    padding: 10,
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
 });
