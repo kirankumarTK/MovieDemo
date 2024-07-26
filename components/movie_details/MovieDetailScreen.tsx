@@ -5,7 +5,6 @@ import MovieBanner from '../MovieBanner';
 import {styles} from '../../styles/appStyle';
 import {getMovieDetail} from '../../api_services/callAPI';
 import MovieDetail from './MovieDetail';
-import PlayButton from '../PlayButton';
 import VideoPlayerComp from '../VideoPlayerComp';
 
 const MovieDetailScreen = ({route, navigation}) => {
@@ -18,11 +17,15 @@ const MovieDetailScreen = ({route, navigation}) => {
   //this method is to handle video popup open & close
   const showVideoPopup = () => {
     setVideo(!videoPopup);
-  }
+  };
   useEffect(() => {
     getMovieDetail(movieList.id)
       .then(movie => {
-        setDetails(movie);
+        if (movie.status == 200) {
+          setDetails(movie.data);
+        } else {
+          console.log('Status Code : ' + movie.status + movie.statusText);
+        }
       })
       .finally(() => {
         setProgress(false);
@@ -33,14 +36,12 @@ const MovieDetailScreen = ({route, navigation}) => {
     <React.Fragment>
       {!progress && (
         <ScrollView>
-          <SafeAreaView
+          <View
             style={[styles.movie_detail, styles.app_color_secondary]}>
-            <MovieBanner movieImage={movieList.poster_path} />
-
-            <PlayButton handleClick={showVideoPopup} />
-
+            <MovieBanner movieImage={movieList.poster_path} handleClick={showVideoPopup} />
+            
             <MovieDetail movieDetails={movieDetails} />
-          </SafeAreaView>
+          </View>
         </ScrollView>
       )}
 

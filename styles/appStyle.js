@@ -56,7 +56,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   banner_img: {
-    padding: 5,
     height: screenHeight / 2,
     width: screenWidth,
   },
@@ -79,7 +78,6 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Cochin',
     padding: 5,
-    fontWeight: 'bold',
   },
   genders_view: {
     alignContent: 'center',
@@ -91,8 +89,8 @@ export const styles = StyleSheet.create({
   },
   play_button: {
     position: 'absolute',
-    top: 470,
     right: 5,
+    top: screenHeight / 2 - 25,
   },
   round_circle: {
     backgroundColor: '#66FF66',
@@ -105,5 +103,6 @@ export const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
+    backgroundColor : 'balck',
   },
 });

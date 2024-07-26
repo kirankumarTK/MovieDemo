@@ -1,53 +1,70 @@
 // inorder to use await method should be declare as async
 
-import axios from "axios";
+import axios from 'axios';
 //import config from "../config/config";
 
-const BASE_URL ='https://api.themoviedb.org/3/'
-const TOKEN = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZGQ1ZTRjMzAxZGE2YTVjODJkMDVlNzA5Y2JjNjBiOSIsIm5iZiI6MTcyMTExMjEzMi43NjE1MjQsInN1YiI6IjY2OTYxNGI2OTg5NDQ1YjVmZjgwNzdhNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cu5PzFuzEwpdNZ5LIm37LfKbCNQR3xDghRjCOZizcl8'
-export const IMAGE_w500 = 'https://image.tmdb.org/t/p/w500'
+const BASE_URL = 'https://api.themoviedb.org/3/';
+const TOKEN =
+  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZGQ1ZTRjMzAxZGE2YTVjODJkMDVlNzA5Y2JjNjBiOSIsIm5iZiI6MTcyMTExMjEzMi43NjE1MjQsInN1YiI6IjY2OTYxNGI2OTg5NDQ1YjVmZjgwNzdhNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cu5PzFuzEwpdNZ5LIm37LfKbCNQR3xDghRjCOZizcl8';
+export const IMAGE_w500 = 'https://image.tmdb.org/t/p/w500';
 // axios is libary used to call api
-export const getPopularMovies = async() => {
-  const response = await axios.get(BASE_URL+'movie/popular?language=en-US&page=1',
+export const getPopularMovies = async () => {
+  const response = await axios.get(
+    BASE_URL + 'movie/popular?language=en-US&page=1',
     {
       accept: 'application/json',
-      headers: { Authorization: TOKEN }
-    });
+      headers: {Authorization: TOKEN},
+    },
+  );
+  if (response.status != 200) {
+    console.log(BASE_URL + 'movie/popular?language=en-US&page=1');
+    console.log(response.status);
+    console.log(response.data);
+  }
+  return response.data.results;
+};
 
-  return response.data.results
-
-}
-
-
-export const getTrendingMovies = async() => {
-  const response = await axios.get(BASE_URL+'trending/movie/day?language=en-US',
+export const getTrendingMovies = async () => {
+  const response = await axios.get(
+    BASE_URL + 'trending/movie/day?language=en-US',
     {
       accept: 'application/json',
-      headers: { Authorization: TOKEN }
-    });
-
-  return response.data.results
-
-}
+      timeout: 1000,
+      headers: {Authorization: TOKEN},
+    },
+  );
+ if (response.status != 200) {
+   console.log(BASE_URL + 'trending/movie/day?language=en-US');
+   console.log(response.status);
+   console.log(response.data);
+ }
+  return response.data.results;
+};
 
 export const getTopRatedMovies = async () => {
-  const response = await axios.get(BASE_URL+'movie/top_rated?language=en-US&page=1',
+  const response = await axios.get(
+    BASE_URL + 'movie/top_rated?language=en-US&page=1',
     {
       accept: 'application/json',
-      headers: { Authorization: TOKEN }
-    });
+      headers: {Authorization: TOKEN},
+    },
+  );
+ if (response.status != 200) {
+   console.log(BASE_URL + 'movie/top_rated?language=en-US&page=1');
+   console.log(response.status);
+   console.log(response.data);
+ }
+  return response.data.results;
+};
 
-  return response.data.results
-
-}
-
-export const getMovieDetail = async (movieId) => {
-  
-  const response = await axios.get(BASE_URL + `movie/${movieId}?language=en-US`,
+export const getMovieDetail = async movieId => {
+  const response = await axios.get(
+    BASE_URL + `movie/${movieId}?language=en-US`,
     {
       accept: 'application/json',
-      headers: { Authorization: TOKEN }
-    });
-  
-  return response.data
-}
+      headers: {Authorization: TOKEN},
+    },
+  );
+
+  return response;
+};

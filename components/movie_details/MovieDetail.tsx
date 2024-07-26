@@ -35,7 +35,7 @@ class MovieDetail extends React.PureComponent {
           starSize={30}
         />
 
-        <Text style={[styles.text_center, styles.margin_style]}>
+        <Text style={[styles.text_center, styles.margin_style,styles.app_text_color]}>
           {movieDetails.overview}
         </Text>
 
