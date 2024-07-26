@@ -1,2 +1,13 @@
+// start rating lib 
 npm install react-native-svg
 npm install react-native-star-rating-widget --save
+
+//date lib
+npm install dateformat
+npm i --save-dev @types/dateformat
+
+//vector img lib
+npm install --save react-native-vector-icons 
+npm i --save-dev @types/react-native-vector-icons
+
+//video lib

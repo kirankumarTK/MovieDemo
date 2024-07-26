@@ -13,6 +13,9 @@ export const styles = StyleSheet.create({
   app_text_color: {
     color: 'black',
   },
+  app_button_color: {
+    color: '#FFFFFF',
+  },
   movieliststyle: {
     padding: 5,
     flex: 1,
@@ -53,7 +56,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   banner_img: {
-    padding: 5,
     height: screenHeight / 2,
     width: screenWidth,
   },
@@ -76,11 +78,31 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Cochin',
     padding: 5,
-    fontWeight: 'bold',
   },
   genders_view: {
     alignContent: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+  },
+  margin_style: {
+    margin: 5,
+  },
+  play_button: {
+    position: 'absolute',
+    right: 5,
+    top: screenHeight / 2 - 25,
+  },
+  round_circle: {
+    backgroundColor: '#66FF66',
+    borderRadius: 50,
+    padding: 10,
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    backgroundColor : 'balck',
   },
 });

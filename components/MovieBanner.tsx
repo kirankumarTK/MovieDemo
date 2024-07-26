@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Image } from 'react-native';
+import { Image, View,Dimensions } from 'react-native';
 import { IMAGE_w500 } from '../api_services/callAPI';
 import PropTypes from 'prop-types';
 import { styles } from '../styles/appStyle';
+import PlayButton from './PlayButton';
 
 class MovieBanner extends React.PureComponent {
+  
     render() {
-        const { movieImage } = this.props;
+        const {movieImage, handleClick} = this.props;
         return (
+          <View style={styles.banner_img}>
             <Image
-                style={styles.banner_img}
-                source={{ uri: IMAGE_w500 + movieImage }}
-                resizeMode='cover'
+              style={styles.banner_img}
+              source={{uri: IMAGE_w500 + movieImage}}
+              resizeMode="cover"
             />
+
+            <PlayButton handleClick={handleClick} />
+          </View>
         );
     }
 }
