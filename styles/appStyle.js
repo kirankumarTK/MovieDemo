@@ -18,12 +18,13 @@ export const styles = StyleSheet.create({
   },
   movieliststyle: {
     padding: 5,
+    marginTop : 50,
     flex: 1,
   },
   movieNameText: {
     fontSize: 10,
     fontStyle: 'italic',
-    fontWeight: 'bold',
+    fontWeight: 'semibold',
     paddingTop: 2,
     width: 130,
     textAlign: 'center',
@@ -32,7 +33,7 @@ export const styles = StyleSheet.create({
     alignContent: 'center',
     fontSize: 18,
     padding: 5,
-    fontWeight: 'bold',
+    fontWeight: 'semibold',
   },
   tochView: {
     paddingLeft: 10,
@@ -71,7 +72,7 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Cochin',
     padding: 10,
-    fontWeight: 'bold',
+    fontWeight: 'semibold',
   },
   text_center: {
     textAlign: 'center',
@@ -105,4 +106,27 @@ export const styles = StyleSheet.create({
     right: 0,
     backgroundColor : 'balck',
   },
+  app_search: {
+    position : 'absolute',
+    right: 5,
+    top :10,
+  },
+  text_input: {
+    height: 40,
+    padding : 10,
+    borderWidth: 0.5,
+    borderRadius: 20,
+    
+  },
+  row_container: {
+    padding: 5,
+    marginTop : 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  form: {
+    flexBasis: 'auto',
+    flexGrow: 1,
+    paddingRight : 8
+  }
 });
