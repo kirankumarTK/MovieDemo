@@ -25,7 +25,7 @@ const HomePage  = ({navigation}) => {
       setTrending(trendingMoviesData);
     }).catch(err => {
       console.log(err);
-      setError(err);
+      setError(true);
     }).finally(() => {
       setProgress(false);
     }
@@ -70,6 +70,7 @@ const HomePage  = ({navigation}) => {
             <ActivityIndicator size={'large'} />
           </View>
         )}
+        
       </SafeAreaView>
     </React.Fragment>
   );

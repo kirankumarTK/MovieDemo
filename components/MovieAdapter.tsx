@@ -15,12 +15,11 @@ class MovieAdapter extends React.PureComponent {
             style={styles.listView}
             horizontal={true}
             data={content}
+            initialNumToRender={5}
             renderItem={({item}) => (
               <MovieListItem
                 navigation={navigation}
-                movieList={item}
-                initialNumToRender={5}
-              />
+                movieList={item}              />
             )}
           />
         </View>

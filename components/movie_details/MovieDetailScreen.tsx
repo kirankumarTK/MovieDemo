@@ -25,7 +25,7 @@ const MovieDetailScreen = ({route, navigation}) => {
           setDetails(movie.data);
         } else {
           console.log('Status Code : ' + movie.status + movie.statusText);
-        }
+        }``
       })
       .finally(() => {
         setProgress(false);
