@@ -5,6 +5,7 @@ import { getPopularMovies, getTopRatedMovies, getTrendingMovies } from '../api_s
 import MovieAdapter from './MovieAdapter';
 
 
+
 const HomePage  = ({navigation}) => {
 
   const [popularMovies, setMovieList] = useState();

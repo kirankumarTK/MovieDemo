@@ -74,7 +74,6 @@ export const searchMovieTV = async (query, type) => {
       console.log(err);
       printLog(err);
     });
-console.log(response.data);
   return response.data.results;
 };
 

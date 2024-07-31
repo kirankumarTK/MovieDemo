@@ -16,9 +16,16 @@ const Search = ({navigation}) => {
   const [resultArray, setArray] = useState();
 
   const onSearch = (query: String) => {
-      searchMovieTV(query, 'movie').then(response => {
-      setArray(response);
-    });
+       Promise.all([
+         searchMovieTV(query, 'movie'),
+         searchMovieTV(query, 'tv'),
+       ]).then(([movie, tv]) => {
+         const response = [...movie, ...tv];
+           setArray(response);
+       });
+    // searchMovieTV(query, 'movie').then(response => {
+    //   setArray(response);
+    // });
   };
   return (
     <Fragment>
